@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="MOYSIKOTEXNEIO - Το διαδικτυακό ραδιόφωνο του σχολείου μας.">
+  <title>MOYSIKOTEXNEIO | Student Radio</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #141b30;
+      --purple: #9b7bff;
+      --cyan: #55e6e0;
+      --text: #f6f5ff;
+      --muted: #b4bad0;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    header {
+      position: sticky; top: 0; z-index: 5;
+      background: #0b1020ee;
+      border-bottom: 1px solid #ffffff16;
+      backdrop-filter: blur(14px);
+    }
+    nav {
+      max-width: 1100px; margin: auto; padding: 16px 22px;
+      display: flex; justify-content: space-between;
+      align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .brand { font-weight: 900; letter-spacing: 1px; }
+    .brand span { color: var(--purple); }
+    .navlinks { display: flex; gap: 18px; font-size: 14px; }
+    .navlinks a:hover { color: var(--cyan); }
+    .hero {
+      max-width: 1100px; margin: auto; padding: 85px 22px 65px;
+      display: grid; grid-template-columns: 1.2fr 0.8fr;
+      gap: 35px; align-items: center;
+    }
+    .eyebrow {
+      color: var(--cyan); font-size: 12px;
+      letter-spacing: 3px; font-weight: 800;
+    }
+    h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.04; letter-spacing: -3px; margin: 18px 0;
+    }
+    h1 span {
+      background: linear-gradient(90deg, var(--purple), var(--cyan));
+      color: transparent; background-clip: text;
+    }
+    .intro { color: var(--muted); max-width: 540px; }
+    .button {
+      display: inline-block; margin-top: 20px; padding: 13px 22px;
+      border-radius: 12px; font-weight: 800; border: 0;
+      background: linear-gradient(100deg, #8b5cf6, #6658e8);
+      color: white; cursor: pointer; font-size: 15px;
+    }
+    .art {
+      min-height: 300px; border-radius: 28px; padding: 28px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      background:
+        radial-gradient(circle at 75% 25%, #55e6e055, transparent 32%),
+        radial-gradient(circle at 25% 80%, #9b7bff77, transparent 45%),
+        #171c36;
+      border: 1px solid #ffffff20;
+      box-shadow: 0 20px 70px #0005;
+    }
+    .disc {
+      width: 145px; height: 145px; border-radius: 50%;
+      align-self: center; display: grid; place-items: center;
+      background: repeating-radial-gradient(circle, #222944 0 5px, #10162a 6px 10px);
+      border: 3px solid #ffffff25;
+      box-shadow: 0 0 35px #9b7bff55;
+      font-size: 42px;
+    }
+    .section { max-width: 1100px; margin: auto; padding: 45px 22px; }
+    .section h2 { font-size: 30px; margin-bottom: 5px; }
+    .muted { color: var(--muted); }
+    .toolbar { margin: 24px 0; }
+    input {
+      width: 100%; padding: 14px 16px; border-radius: 12px;
+      border: 1px solid #ffffff20; background: var(--panel);
+      color: white; font: inherit;
+    }
+    .episodes {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+    }
+    .card {
+      border-radius: 18px; padding: 20px;
+      background: var(--panel); border: 1px solid #ffffff12;
+    }
+    .cover {
+      height: 125px; border-radius: 12px; display: grid;
+      place-items: center; font-size: 42px; margin-bottom: 16px;
+      background: linear-gradient(135deg, #3b286e, #15535c);
+    }
+    .card h3 { margin: 6px 0; }
+    .card p { color: var(--muted); font-size: 14px; }
+    .card audio { width: 100%; margin-top: 12px; }
+    .empty { color: var(--muted); }
+    .about {
+      border: 1px solid #ffffff15; border-radius: 20px;
+      background: linear-gradient(120deg, #171b36, #111c2d);
+      padding: 28px;
+    }
+    footer {
+      margin-top: 40px; border-top: 1px solid #ffffff15;
+      text-align: center; padding: 30px 20px; color: var(--muted);
+      font-size: 13px;
+    }
+    @media (max-width: 720px) {
+      .hero { grid-template-columns: 1fr; padding-top: 55px; }
+      .art { min-height: 250px; }
+      .episodes { grid-template-columns: 1fr; }
+      .navlinks { width: 100%; justify-content: space-between; gap: 8px; }
+      h1 { letter-spacing: -1.5px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="brand" href="#">MOYSIKO<span>TEXNEIO</span> 🎙️</a>
+      <div class="navlinks">
+        <a href="#ekpompes">Εκπομπές</a>
+        <a href="#sxetika">Το ραδιόφωνο</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">SCHOOL RADIO • ON DEMAND</div>
+        <h1>Η φωνή μας.<br><span>Η μουσική μας.</span></h1>
+        <p class="intro">
+          Καλώς ήρθες στο MOYSIKOTEXNEIO!
+          Άκουσε τις μαθητικές μας εκπομπές, ανακάλυψε
+          μουσικές και γνώρισε τις φωνές του σχολείου μας.
+        </p>
+        <a class="button" href="#ekpompes">▶ ΑΚΟΥ ΤΙΣ ΕΚΠΟΜΠΕΣ</a>
+      </div>
+      <div class="art">
+        <div class="eyebrow">YOUR SCHOOL. YOUR SOUND.</div>
+        <div class="disc">🎧</div>
+        <div>
+          <strong>MOYSIKOTEXNEIO RADIO</strong>
+          <div class="muted">Μαθητικές φωνές, χωρίς σύνορα.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ekpompes">
+      <div class="eyebrow">LISTEN AGAIN</div>
+      <h2>Οι εκπομπές μας 🎵</h2>
+      <p class="muted">Διάλεξε εκπομπή και πάτησε αναπαραγωγή.</p>
+
+      <div class="toolbar">
+        <input id="search" type="search"
+          placeholder="🔎 Αναζήτηση εκπομπής..."
+          aria-label="Αναζήτηση εκπομπής">
+      </div>
+
+      <div class="episodes" id="episodes"></div>
+      <p class="empty" id="empty" hidden>Δεν βρέθηκαν εκπομπές.</p>
+    </section>
+
+    <section class="section" id="sxetika">
+      <div class="about">
+        <div class="eyebrow">ABOUT OUR RADIO</div>
+        <h2>Μια συχνότητα. Πολλές φωνές.</h2>
+        <p class="muted">
+          Το MOYSIKOTEXNEIO είναι το διαδικτυακό ραδιόφωνο
+          της σχολικής μας κοινότητας. Δημιουργούμε εκπομπές,
+          μοιραζόμαστε ιδέες, μουσική και ιστορίες.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    MOYSIKOTEXNEIO © <span id="year"></span> ·
+    Με δημιουργικότητα από τη σχολική μας κοινότητα 🎙️
+  </footer>
+
+  <script>
+    // Πρόσθεσε εδώ τις πραγματικές εκπομπές σου.
+    // Τα αρχεία ήχου μπορούν να φιλοξενούνται σε άλλη υπηρεσία.
+    const episodes = [
+      {
+        title: "Η πρώτη μας εκπομπή",
+        description: "Η πρώτη γνωριμία με το ραδιόφωνό μας.",
+        date: "Προσθήκη ημερομηνίας",
+        audio: "audio/ekpompi1.mp3",
+        icon: "🎙️"
+      },
+      {
+        title: "Μουσικά ταξίδια",
+        description: "Οι μουσικές επιλογές των μαθητών.",
+        date: "Προσθήκη ημερομηνίας",
+        audio: "audio/ekpompi2.mp3",
+        icon: "🎵"
+      },
+      {
+        title: "Τα νέα του σχολείου",
+        description: "Ιδέες, δράσεις και νέα από το σχολείο.",
+        date: "Προσθήκη ημερομηνίας",
+        audio: "audio/ekpompi3.mp3",
+        icon: "📻"
+      }
+    ];
+
+    const container = document.getElementById("episodes");
+    const search = document.getElementById("search");
+    const empty = document.getElementById("empty");
+
+    function renderEpisodes() {
+      const query = search.value.trim().toLocaleLowerCase("el");
+      const filtered = episodes.filter(ep =>
+        (ep.title + " " + ep.description)
+          .toLocaleLowerCase("el").includes(query)
+      );
+
+      container.replaceChildren();
+      empty.hidden = filtered.length !== 0;
+
+      filtered.forEach(ep => {
+        const card = document.createElement("article");
+        card.className = "card";
+
+        const cover = document.createElement("div");
+        cover.className = "cover";
+        cover.textContent = ep.icon;
+
+        const title = document.createElement("h3");
+        title.textContent = ep.title;
+
+        const date = document.createElement("small");
+        date.className = "muted";
+        date.textContent = ep.date;
+
+        const description = document.createElement("p");
+        description.textContent = ep.description;
+
+        const player = document.createElement("audio");
+        player.controls = true;
+        player.preload = "none";
+        player.src = ep.audio;
+        player.setAttribute("aria-label", "Αναπαραγωγή: " + ep.title);
+
+        card.append(cover, title, date, description, player);
+        container.append(card);
+      });
+    }
+
+    search.addEventListener("input", renderEpisodes);
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+    renderEpisodes();
+  </script>
+</body>
+</html>
